@@ -1,0 +1,114 @@
+import os
+import asyncio
+import logging
+from typing import Optional, Dict, Any
+
+import openai
+
+from openai import AzureOpenAI 
+
+
+from .base import LLM, LLMResponse
+
+logger = logging.getLogger(__name__)
+
+class GPT(LLM):
+
+    @staticmethod
+    def v4o():
+        return GPT(model_name="gpt-4o", model_version="2024-02-15-preview") 
+    
+    
+    def _setup(self) -> None:
+        """Set up the OpenAI client."""
+        self.api_key = self.api_key or os.environ.get("AZURE_OPENAI_API_KEY")
+        self.api_endpoint = self.api_endpoint or os.environ.get("AZURE_OPENAI_ENDPOINT")
+        if not self.api_key:
+            raise ValueError("OpenAI API key is required")
+        if not self.api_endpoint:
+            raise ValueError("OpenAI/Azure Endpoint is required")
+        self.client = openai.AzureOpenAI(
+            model=self.model_name,
+            api_version=self.model_version,
+            azure_endpoint=self.api_endpoint
+        )
+        
+        self.async_client = openai.AsyncAzureOpenAI(
+            model=self.model_name,
+            api_version=self.model_version,
+            azure_endpoint=self.api_endpoint
+        )
+    
+    async def chat_async(self, 
+                   system_prompt: str, 
+                   user_prompt: str, 
+                   temperature: float = 0.7,
+                   max_tokens: Optional[int] = None) -> LLMResponse:
+        """Asynchronously get a chat response from OpenAI."""
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}
+        ]
+        
+        for attempt in range(self.retry_count):
+            try:
+                response = await self.async_client.chat.completions.create(
+                    model=self.model_name,
+                    messages=messages,
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                    timeout=self.timeout
+                )
+                
+                return LLMResponse(
+                    content=response.choices[0].message.content,
+                    model=self.model_name,
+                    prompt_tokens=response.usage.prompt_tokens,
+                    completion_tokens=response.usage.completion_tokens,
+                    total_tokens=response.usage.total_tokens,
+                    request_id=response.id,
+                    metadata={"finish_reason": response.choices[0].finish_reason}
+                )
+            except Exception as e:
+                logger.warning(f"Attempt {attempt+1} failed: {str(e)}")
+                if attempt < self.retry_count - 1:
+                    await asyncio.sleep(self.retry_delay * (2 ** attempt))  # Exponential backoff
+                else:
+                    raise
+    
+    def chat(self, 
+             system_prompt: str, 
+             user_prompt: str, 
+             temperature: float = 0.7,
+             max_tokens: Optional[int] = None) -> LLMResponse:
+        """Synchronously get a chat response from OpenAI."""
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}
+        ]
+        
+        for attempt in range(self.retry_count):
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model_name,
+                    messages=messages,
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                    timeout=self.timeout
+                )
+                
+                return LLMResponse(
+                    content=response.choices[0].message.content,
+                    model=self.model_name,
+                    prompt_tokens=response.usage.prompt_tokens,
+                    completion_tokens=response.usage.completion_tokens,
+                    total_tokens=response.usage.total_tokens,
+                    request_id=response.id,
+                    metadata={"finish_reason": response.choices[0].finish_reason}
+                )
+            except Exception as e:
+                logger.warning(f"Attempt {attempt+1} failed: {str(e)}")
+                if attempt < self.retry_count - 1:
+                    time.sleep(self.retry_delay * (2 ** attempt))  # Exponential backoff
+                else:
+                    raise

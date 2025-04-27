@@ -1,0 +1,18 @@
+{
+  "set_id": "61eeec11-c668-404e-a8f2-d642a5d3ebd3",
+  "name": "Cardiovascular vs Chronic Disease Set",
+  "description": "Triage questions comparing acute cardiovascular symptoms against chronic disease exacerbations",
+  "author": "Clinical Decision Research Team",
+  "created_date": "2025-04-27T16:24:16.033634",
+  "questions": [
+    {
+      "question_id": "bdbe9ba3-0ceb-4e9c-a40f-b8cf22916ee3",
+      "patient1": "67-year-old male with type 2 diabetes, hypertension, and chronic kidney disease. Recent labs show worsening kidney function with eGFR of 38. Reports mild fatigue but no urgent symptoms.",
+      "patient2": "54-year-old female with new onset chest pain, describes it as 'pressure-like'. History of hyperlipidemia and family history of early heart disease. Pain comes with exertion and resolves with rest.",
+      "context": "primary care triage",
+      "expertise_required": [],
+      "expert_answer": 2,
+      "created_date": "2025-04-27T16:24:16.033624"
+    }
+  ]
+}

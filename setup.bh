@@ -1,0 +1,4 @@
+#!/usr/bin/bash 
+
+export PYTHONPATH=$PYTHONPATH:/path/to/hvp_project
+
