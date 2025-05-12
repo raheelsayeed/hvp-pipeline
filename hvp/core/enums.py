@@ -7,11 +7,6 @@ class SubjectType(Enum):
     POLICYMAKER = "policymaker"
     PUBLIC = "public"
 
-class SurveyType(Enum):
-    CHOICE = "discrete_choice"
-    OPEN_CHOICE = "open_choice"
-    RANKING = "ranking"
-    SCENARIO = "scenario_based"
 
 class GeoContext(Enum):
     RURAL = "rural"
@@ -31,13 +26,6 @@ class ParticipantStatus(Enum):
     COMPLETED = "completed"
     WITHDRAWN = "withdrawn"
     EXCLUDED = "excluded"
-
-class QuestionType(Enum):
-    DISCRETE_CHOICE = "discrete_choice"
-    RANKING = "ranking"
-    OPEN_ENDED = "open_ended"
-    LIKERT = "likert"
-    SCENARIO = "scenario"
 
 class ResponseQuality(Enum):
     VALID = "valid"

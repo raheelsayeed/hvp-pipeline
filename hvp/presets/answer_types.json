@@ -1,0 +1,14 @@
+[
+    {
+        "name": "BOOLEAN",
+        "text": "BOOLEAN",
+        "options": [
+            {"text": "Yes", "value": "1"},
+            {"text": "No", "value": "0"}
+        ],
+        "tags": ["boolean", "simple"],
+        "metadata": {"description": "A simple yes or no choice"},
+        "language": "en",
+        "version": "1.0"
+    }
+]

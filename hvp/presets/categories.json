@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Triage",
+        "tags": ["medical", "triage"],
+        "metadata": {"category_type": "decision-making"}
+    },
+    {
+        "name": "Ranking"
+    },
+    {
+        "name": "Discreet"
+    },
+    {
+        "name": "Diagnosis",
+        "tags": ["medical", "diagnosis"],
+        "metadata": {"category_type": "diagnosis process"}
+    },
+    {
+        "name": "Treatment",
+        "tags": ["medical", "treatment"],
+        "metadata": {"category_type": "treatment decisions"}
+    },
+    {
+        "name": "Follow_Up",
+        "tags": ["medical", "follow-up"],
+        "metadata": {"category_type": "follow-up care"}
+    },
+    {
+        "name": "Emergency",
+        "tags": ["medical", "emergency"],
+        "metadata": {"category_type": "emergency situations"}
+    }
+]
