@@ -29,8 +29,10 @@ class Survey(IdentifiableUUID):
         
         # Iterate over each question and append its markdown
         for index, question in enumerate(self.questions, start=1):
+            
             markdown += f"## Question {index}\n\n"
-            markdown += question.to_markdown() + "\n\n"
+            markdown += f"_System prompt: {self.participant.instruction}_\n\n"
+            markdown += f"{question.to_markdown()}\n\n"
 
         # Optionally save to a file
         if file_path:

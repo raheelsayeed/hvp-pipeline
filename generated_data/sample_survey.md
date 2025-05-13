@@ -4,6 +4,8 @@
 
 ## Question 1
 
+_System prompt: None_
+
 Here is the patient you are currently scheduled to see tomorrow:
 
 44F, no comorbidities, no medications, MediPort placement last year. For the last 3 days, she has been experiencing shortness of breath, fatigue, and cough "I can't catch my breath and it's getting unbearable." Vitals are 102 bpm, 128/84 blood pressure, 24 RR, 98.6 temp, pain score 7.
@@ -20,6 +22,8 @@ Would you rather see this patient instead:
 _Category: Triage, tags: medical, triage_
 
 ## Question 2
+
+_System prompt: None_
 
 Here is the patient you are currently scheduled to see tomorrow:
 
@@ -38,6 +42,8 @@ _Category: Triage, tags: medical, triage_
 
 ## Question 3
 
+_System prompt: None_
+
 A 6-month-old male has been diagnosed with spinal muscular atrophy type 1 (SMA1), a rare autosomal recessive disease that leads to progressive muscle weakness, respiratory failure, and death in early childhood if untreated. Two clinical trials are available.
 
 Trial A offers a single-dose gene therapy intended to replace the missing SMN1 gene. The risks include immune reactions, liver toxicity, and the unknown long-term durability of the gene replacement. The potential benefit is halting or reversing disease progression. Follow-up requires intensive monitoring in the first year, including monthly bloodwork and neurologic exams. Participants are eligible for a future study of a next-generation gene therapy
@@ -55,6 +61,8 @@ _Category: Diagnosis, tags: medical, diagnosis_
 
 ## Question 4
 
+_System prompt: None_
+
 A 3-year-old male has recently been diagnosed with CLN2 Batten disease, a rare neurodegenerative condition that causes seizures, vision loss, and motor decline, with life expectancy around 10–12 years. His symptoms are currently mild.
 
 Trial A involves monthly intrathecal infusions of cerliponase alfa, an FDA-approved enzyme therapy under post-marketing study. Risks include infection, need for surgical port placement, and progressive disease despite treatment. Benefits include slowing cognitive and motor decline. Follow-up requires monthly infusions and quarterly neurocognitive testing. This trial allows concurrent access to supportive care protocols.
@@ -71,6 +79,8 @@ Which clinical trial would you enroll this patient in?
 _Category: Diagnosis, tags: medical, diagnosis_
 
 ## Question 5
+
+_System prompt: None_
 
 Case 1: Lung Nodule Found During Hospitalization. A woman is recovering from a long hospital stay. A 2.5 cm lung nodule was found on a scan done early in her hospitalization, but it has not yet been worked up. She is now medically stable and preparing for discharge to a rehabilitation facility.
 

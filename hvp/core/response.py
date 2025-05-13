@@ -42,6 +42,8 @@ class SurveyResponse(IdentifiableUUID):
 
         for i, response in enumerate(self.responses):
             print(f'Response<{i}>: {response}')
+            markdown += f"### Question {i + 1}\n\n"
+            markdown += f"_System prompt: {self.survey.participant.instruction}_\n\n"
             markdown += response.prompt + "\n\n"
             
 

@@ -79,7 +79,6 @@ p(type(gpt))
 gpt_participant = LLMParticipant(
     first_name="Chat",
     last_name="GPT",
-    type=ParticipantType.LLM,
     instruction="You are a helpful assistant for clinical decision making in the clinical domain.",
     model=gpt
 )

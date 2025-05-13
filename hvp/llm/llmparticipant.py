@@ -8,18 +8,16 @@ class LLMParticipant(Participant):
     model: LLM
 
     def __init__(self, **data):
+        data['type'] = ParticipantType.LLM
         super().__init__(**data)
-        self.type = ParticipantType.LLM
 
     def send_prompt_to_llm(self, prompt: str) -> str:
         response = self.model.chat(
             system_prompt=self.instruction,
             user_prompt=prompt,
-            temperature=0.7
+            temperature=self.model.temperature,
         )
         return response
-    
-
     
     def format_response(self, response) -> str:
         return self.model.format_response(response=response)

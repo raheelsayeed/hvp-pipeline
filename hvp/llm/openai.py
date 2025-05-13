@@ -1,3 +1,4 @@
+from datetime import time
 import os
 import asyncio
 import logging
@@ -45,8 +46,8 @@ class GPT(LLM):
     
     def chat(self, 
              system_prompt: str, 
-             user_prompt: str, 
-             temperature: float = 0.7,
+             user_prompt: str,
+             temperature: Optional[float] = 0.7,
              max_tokens: Optional[int] = None) -> Any:
         """Synchronously get a chat response from OpenAI."""
         messages = [
@@ -68,8 +69,6 @@ class GPT(LLM):
                 
 
             except Exception as e:
+                raise e
                 logger.warning(f"Attempt {attempt+1} failed: {str(e)}")
-                if attempt < self.retry_count - 1:
-                    time.sleep(self.retry_delay * (2 ** attempt))  # Exponential backoff
-                else:
-                    raise
+

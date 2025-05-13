@@ -17,6 +17,7 @@ class LLM(BaseModel, ABC):
     retry_delay: float = 1.0
     timeout: float = 30.0
     client: Optional[Any] = Field(None, exclude=True)
+    temperature: float = 0.7
 
     def __init__(self, **data):
         super().__init__(**data)
@@ -35,7 +36,6 @@ class LLM(BaseModel, ABC):
     def chat(self, 
              system_prompt: str, 
              user_prompt: str, 
-             temperature: float = 0.7,
              max_tokens: Optional[int] = None) -> QuestionResponse:
         """Synchronously get a chat response from the LLM."""
         pass
