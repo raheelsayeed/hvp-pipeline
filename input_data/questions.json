@@ -17,7 +17,7 @@
         "publisher": "HealthOrg",
         "date_created": "2023-10-10T14:00:00",
         "instruct_human": "Please evaluate the patient scenarios carefully and select the option you would prefer as a clinician.",
-        "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\"}"
+        "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\", \"reason\": \"<your-reasoning>\"}"
     },
     {
         "text": "Here is the patient you are currently scheduled to see tomorrow:\n\n61F, history of severe sleep apnea and asthma, on loratadine and pseudoephedrine, no procedures. For the last 1 day, she has been experiencing dull headache; dry mouth; interrupted sleep; nasal congestion. \"This dull headache won't go away and it's making daily activities tough.\" Vitals are 78 bpm, 125/80 blood pressure, 16 RR, 98.6 temp, pain score 5\n\nWould you rather see this patient instead:\n\n53M, history of hepatitis B, no medications, previous punch biopsies. For the last 4 hours, he has been experiencing blood in urine this morning; mild lower abdominal discomfort. \"My stomach is killing me, and now there's blood when I pee!\" Vitals are 88 bpm, 120/80 blood pressure, 16 RR, 98.6 temp, pain score 7",
@@ -57,7 +57,7 @@
         "publisher": "EndoCare",
         "date_created": "2023-10-11T09:00:00",
         "instruct_human": "Assess the patient's history and current treatment to decide on prescribing a GLP-1 receptor agonist.",
-        "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\"}"
+        "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\", \"reason\": \"<your-reasoning>\"}"
     },
     {
         "text": "A 63-year-old woman with Medicare insurance and living in a lower-income ZIP code presents for follow-up. She was diagnosed with type 2 diabetes 10 years ago and has had two elevated HbA1c levels in the past 6 months, both around 7.8–7.9%. Her BMI is 29. Her comorbidities include chronic kidney disease (Stage 3), hypertension, anxiety, and a prior stroke. Her current medications include metformin, insulin, and an SGLT2 inhibitor. Should this patient be prescribed a GLP-1 receptor agonist?",

@@ -19,7 +19,7 @@ Would you rather see this patient instead:
 
 Instruct Human: Please evaluate the patient scenarios carefully and select the option you would prefer as a clinician.
 
-Instruct LLM: Please an answer from the choices and reply in JSON format as {"answer": "<your-answer-choice>"}
+Instruct LLM: Please an answer from the choices and reply in JSON format as {"answer": "<your-answer-choice>", "reason": "<your-reasoning>"}
 
 
 **Please select one answer:**
