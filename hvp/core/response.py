@@ -22,15 +22,12 @@ class SurveyResponse(IdentifiableUUID):
     def participant_is_LLM(self) -> bool:
         return self.survey.participant.type == ParticipantType.LLM
     
-
-   ## TODO: LLM answer function should be derived from the LLM class
-
     def get_response_for_question(self, question_id: str, answer_id: str) -> str:
 
         for response in self.responses:
             if response.question_identifier == question_id and response.answer_set_identifier == answer_id:
                 return self.survey.participant.format_response(response=response.response)
-                # return response.content
+
         return "No response available"
     
 

@@ -6,6 +6,9 @@
 
 _System prompt: None_
 
+
+_Category: Triage, tags: medical, triage_
+
 Here is the patient you are currently scheduled to see tomorrow:
 
 44F, no comorbidities, no medications, MediPort placement last year. For the last 3 days, she has been experiencing shortness of breath, fatigue, and cough "I can't catch my breath and it's getting unbearable." Vitals are 102 bpm, 128/84 blood pressure, 24 RR, 98.6 temp, pain score 7.
@@ -14,16 +17,22 @@ Would you rather see this patient instead:
 
 63F, history of hyperlipidemia, no medications, no procedures. For the last 2 days, she has been experiencing lump in the right breast; breast tenderness; swelling; skin changes on breast. "I feel a bit of tenderness in my right breast." Vitals are 76 bpm, 118/74 blood pressure, 16 RR, 98.6 temp, pain score 2
 
+Instruct Human: Please evaluate the patient scenarios carefully and select the option you would prefer as a clinician.
+
+Instruct LLM: Please an answer from the choices and reply in JSON format as {"answer": "<your-answer-choice>"}
+
 
 **Please select one answer:**
 - Yes
 - No
 
-_Category: Triage, tags: medical, triage_
 
 ## Question 2
 
 _System prompt: None_
+
+
+_Category: Triage, tags: medical, triage_
 
 Here is the patient you are currently scheduled to see tomorrow:
 
@@ -33,16 +42,22 @@ Would you rather see this patient instead:
 
 53M, history of hepatitis B, no medications, previous punch biopsies. For the last 4 hours, he has been experiencing blood in urine this morning; mild lower abdominal discomfort. "My stomach is killing me, and now there's blood when I pee!" Vitals are 88 bpm, 120/80 blood pressure, 16 RR, 98.6 temp, pain score 7
 
+Instruct Human: Consider the clinical details and make a decision based on the patient's immediate needs.
+
+Instruct LLM: Please an answer from the choices and reply in JSON format as {"answer": "<your-answer-choice>"}
+
 
 **Please select one answer:**
 - Yes
 - No
 
-_Category: Triage, tags: medical, triage_
 
 ## Question 3
 
 _System prompt: None_
+
+
+_Category: Diagnosis, tags: medical, diagnosis_
 
 A 6-month-old male has been diagnosed with spinal muscular atrophy type 1 (SMA1), a rare autosomal recessive disease that leads to progressive muscle weakness, respiratory failure, and death in early childhood if untreated. Two clinical trials are available.
 
@@ -52,16 +67,22 @@ Trial B offers a newer antisense oligonucleotide therapy given intrathecally eve
 
 Which clinical trial would you enroll this patient in?
 
+Instruct Human: Evaluate the risks and benefits of each trial to make an informed decision.
+
+Instruct LLM: Based on the trial details, recommend the most beneficial option for the patient. Please an answer from the choices and reply in JSON format as "{"answer": "<your-answer-choice>"
+
 
 **Please select one answer:**
 - Trial A
 - Trial B
 
-_Category: Diagnosis, tags: medical, diagnosis_
 
 ## Question 4
 
 _System prompt: None_
+
+
+_Category: Diagnosis, tags: medical, diagnosis_
 
 A 3-year-old male has recently been diagnosed with CLN2 Batten disease, a rare neurodegenerative condition that causes seizures, vision loss, and motor decline, with life expectancy around 10–12 years. His symptoms are currently mild.
 
@@ -71,18 +92,28 @@ Trial B is a phase I gene therapy trial with a single intracerebral injection of
 
 Which clinical trial would you enroll this patient in?
 
+Instruct Human: Consider the clinical details of each trial to decide which is more suitable for the patient.
+
+Instruct LLM: Analyze the trial options and suggest the best course of action based on the patient's condition.
+
 
 **Please select one answer:**
 - Trial A
 - Trial B
 
-_Category: Diagnosis, tags: medical, diagnosis_
 
 ## Question 5
 
 _System prompt: None_
 
+
+_Category: Diagnosis, tags: medical, diagnosis_
+
 Case 1: Lung Nodule Found During Hospitalization. A woman is recovering from a long hospital stay. A 2.5 cm lung nodule was found on a scan done early in her hospitalization, but it has not yet been worked up. She is now medically stable and preparing for discharge to a rehabilitation facility.
+
+Instruct Human: Review each decision point carefully and select the most appropriate clinical action.
+
+Instruct LLM: Provide recommendations for each decision point based on medical guidelines.
 
 
 **Please select one answer:**
@@ -109,5 +140,4 @@ Case 1: Lung Nodule Found During Hospitalization. A woman is recovering from a l
 - Option A: Keep patient an extra 48 hours to complete diagnostic testing, displacing another patient needing a monitored bed
 - Option B: Discharge today and accept a delay in diagnostic certainty
 
-_Category: Diagnosis, tags: medical, diagnosis_
 
