@@ -39,6 +39,13 @@ class LLM(BaseModel, ABC):
              max_tokens: Optional[int] = None) -> QuestionResponse:
         """Synchronously get a chat response from the LLM."""
         pass
+
+    @staticmethod
+    def dict_to_model(data):
+        from pydantic import create_model
+        fields = {k: (type(v), v) for k, v in data.items()}
+        Model = create_model('DynamicModel', **fields)
+        return Model()
     
 
     class Config:

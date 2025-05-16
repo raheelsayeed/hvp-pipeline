@@ -51,7 +51,6 @@ class LLMSurveyProcessor(BaseModel):
                     )
                     responses.append(response)
                 except Exception as e:
-
                     print(f"Error processing question {question.identifier} with answer set {answer_set.identifier}: {e}")
                     responses.append(
                         QuestionResponse(

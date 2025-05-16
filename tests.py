@@ -11,6 +11,7 @@ def load_question_from_file(file_path):
 
 
 
+
 from hvp.core.participant import ParticipantType
 from hvp.core.question import *
 
@@ -19,8 +20,6 @@ from hvp.core.question import *
 from hvp.core.answeroption import AnswerTypes 
 boolean_type = AnswerTypes.BOOLEAN
 print(boolean_type.identifier)
-
-
 
 p("=====================================")
 
@@ -93,17 +92,47 @@ survey = SurveyGenerator().create_and_assign(
         [QuestionTypes.TRIAGE, QuestionTypes.DIAGNOSIS]
 )
 
+p("Create LLMSurveyProcessor")
+p("Evaluate GPT-Survey")
 from hvp.llm.evaluator import LLMSurveyProcessor 
-
-evaluator = LLMSurveyProcessor(survey=survey)
-evaluated_survey = evaluator.run()
-
 try: 
+    evaluator = LLMSurveyProcessor(survey=survey)
+    evaluated_survey = evaluator.run()
     evaluated_survey.to_markdown("generated_data/evaluated_sample2.md")
     evaluated_survey_json = evaluated_survey.model_dump_json(indent=4)
     p(evaluated_survey_json)
     open("generated_data/evaluated_survey_response2.json", "w").write(evaluated_survey_json)
+except Exception as e:
+    p(f"Error: {e}")
 
 
+p("=====================================")
+p("=====================================")
+p("Claud:")
+from hvp.llm.claude import Claude
+claud = Claude.v37()
+claud_participant = LLMParticipant(
+    first_name="Claude",
+    last_name=claud.model_version,
+    instruction="You are a helpful AI assistant for clinical decision making.",
+    model=claud
+)
+p(claud_participant)
+p("Assigning survey to Claude")
+survey_claud = SurveyGenerator().create_and_assign(
+    num_questions=5,
+    question_set=QSet,
+    participant=claud_participant,
+    filter_func=lambda q, p: q.type in 
+        [QuestionTypes.TRIAGE, QuestionTypes.DIAGNOSIS]
+)
+
+evaluator = LLMSurveyProcessor(survey=survey_claud)
+try: 
+    evaluated_survey = evaluator.run()
+    evaluated_survey.to_markdown("generated_data/claud_evaluated_sample.md")
+    evaluated_survey_json = evaluated_survey.model_dump_json(indent=4)
+    p(evaluated_survey_json)
+    open("generated_data/claud_evaluated_survey_response.json", "w").write(evaluated_survey_json)
 except Exception as e:
     p(f"Error: {e}")
