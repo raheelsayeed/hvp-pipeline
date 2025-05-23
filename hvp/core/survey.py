@@ -14,6 +14,10 @@ class Survey(IdentifiableUUID):
     footer: Optional[str] = None
     purpose: Optional[str] = None
     instructions: Optional[str] = None
+
+    @property
+    def s3_filename(self) -> str:
+        return f"survey_{self.participant.identifier}.json"
     
 
     def to_markdown_header(self) -> str:

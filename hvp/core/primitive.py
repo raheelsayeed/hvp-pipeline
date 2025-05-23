@@ -5,7 +5,9 @@ from pydantic import BaseModel, Field
 import importlib.resources as pkg_resources
 import json, uuid
 from pathlib import Path
-import os
+import os, logging
+
+log = logging.getLogger(__name__)
 
 class PrimitiveType(BaseModel):
     tags: Optional[List[str]] = None
@@ -28,7 +30,7 @@ class IdentifiableUUID(PrimitiveType):
 def load_json_from_package(file_name):
     with pkg_resources.open_text('hvp.presets', file_name) as file:
         data = json.load(file)
-        print(f"Loaded data from {file_name}: {data}")  # Debugging output
+        log.debug(f"Loaded data from {file_name}: {data}")  # Debugging output
         return data
 
 # Decorator to add a from_json class method
@@ -40,7 +42,7 @@ def add_from_json_method(model_cls, file_name):
             instance = model_cls(**item)
             if member_name not in cls.__members__:
                 setattr(cls, member_name, instance)
-                print(f"Added {member_name} to {cls.__name__}")  # Debugging output
+                log.debug(f"Added {member_name} to {cls.__name__}")  # Debugging output
 
     def decorator(cls):
         setattr(cls, 'from_json', classmethod(from_json))

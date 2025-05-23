@@ -9,9 +9,6 @@ def load_question_from_file(file_path):
     with open(file_path, 'r') as file:
         return json.load(file)
 
-
-
-
 from hvp.core.participant import ParticipantType
 from hvp.core.question import *
 
@@ -63,11 +60,7 @@ survey = SurveyGenerator().create_and_assign(
         [QuestionTypes.TRIAGE, QuestionTypes.DIAGNOSIS]
 )
 
-
-
-
 survey_md = survey.to_markdown("generated_data/sample_survey.md")
-
 
 p("=====================================")
 
@@ -92,16 +85,21 @@ survey = SurveyGenerator().create_and_assign(
         [QuestionTypes.TRIAGE, QuestionTypes.DIAGNOSIS]
 )
 
+
+open("generated_data/survey_participant_gpt.json", "w").write(survey.model_dump_json(indent=4))
+
+
 p("Create LLMSurveyProcessor")
 p("Evaluate GPT-Survey")
+
 from hvp.llm.evaluator import LLMSurveyProcessor 
 try: 
     evaluator = LLMSurveyProcessor(survey=survey)
-    evaluated_survey = evaluator.run()
-    evaluated_survey.to_markdown("generated_data/evaluated_sample2.md")
-    evaluated_survey_json = evaluated_survey.model_dump_json(indent=4)
-    p(evaluated_survey_json)
-    open("generated_data/evaluated_survey_response2.json", "w").write(evaluated_survey_json)
+    # evaluated_survey = evaluator.run()
+    # evaluated_survey.to_markdown("generated_data/evaluated_sample2.md")
+    # evaluated_survey_json = evaluated_survey.model_dump_json(indent=4)
+    # p(evaluated_survey_json)
+    # open("generated_data/evaluated_survey_response2.json", "w").write(evaluated_survey_json)
 except Exception as e:
     p(f"Error: {e}")
 
@@ -109,6 +107,8 @@ except Exception as e:
 p("=====================================")
 p("=====================================")
 p("Claud:")
+
+
 from hvp.llm.claude import Claude
 claud = Claude.v37()
 claud_participant = LLMParticipant(
