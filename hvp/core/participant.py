@@ -3,8 +3,6 @@ from typing import Optional
 from pydantic import BaseModel, Field, field_validator, model_validator, validator, ValidationError
 import uuid
 
-from hvp.core.models import * 
-
 # Define the ParticipantType Enum
 class ParticipantType(Enum):
     HUMAN = "Human"

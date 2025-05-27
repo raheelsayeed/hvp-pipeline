@@ -11,8 +11,8 @@ setup(
     install_requires=[
         'pydantic>=1.8',
     ],
-    description='A library for handling categories and answer types with JSON configuration.',
-    author='Mohd. Raheel Sayeed',
+    description='custom library for human values project',
+    author='Mohd Raheel Sayeed',
     author_email='raheel_sayeed@hms.harvard.edu',
     url='https://github.com/raheelsayeed/hvp',  # Update with your repository URL
     classifiers=[
