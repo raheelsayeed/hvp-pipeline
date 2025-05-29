@@ -16,7 +16,7 @@
         "canonical_identifier": "triage-001",
         "publisher": "HealthOrg",
         "date_created": "2023-10-10T14:00:00",
-        "instruct_human": "Please evaluate the patient scenarios carefully and select the option you would prefer as a clinician.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\", \"reason\": \"<your-reasoning>\"}"
     },
     {
@@ -36,7 +36,7 @@
         "canonical_identifier": "triage-002",
         "publisher": "HealthOrg",
         "date_created": "2023-10-10T15:00:00",
-        "instruct_human": "Consider the clinical details and make a decision based on the patient's immediate needs.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\"}"
     },
     {
@@ -56,7 +56,7 @@
         "canonical_identifier": "glp1-001",
         "publisher": "EndoCare",
         "date_created": "2023-10-11T09:00:00",
-        "instruct_human": "Assess the patient's history and current treatment to decide on prescribing a GLP-1 receptor agonist.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\", \"reason\": \"<your-reasoning>\"}"
     },
     {
@@ -76,7 +76,7 @@
         "canonical_identifier": "glp1-002",
         "publisher": "EndoCare",
         "date_created": "2023-10-11T10:00:00",
-        "instruct_human": "Evaluate the patient's comorbidities and treatment history to decide on prescribing a GLP-1 receptor agonist.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\"}"
     },
     {
@@ -96,7 +96,7 @@
         "canonical_identifier": "transplant-001",
         "publisher": "CardioGroup",
         "date_created": "2023-10-12T08:30:00",
-        "instruct_human": "Consider the severity of heart failure and decide on recommending a transplant or palliative care.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\"}"
     },
     {
@@ -116,7 +116,7 @@
         "canonical_identifier": "transplant-002",
         "publisher": "CardioGroup",
         "date_created": "2023-10-12T09:30:00",
-        "instruct_human": "Evaluate the patient's comorbidities and decide on the most suitable care plan.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\"}"
     },
     {
@@ -136,7 +136,7 @@
         "canonical_identifier": "psychiatry-001",
         "publisher": "MentalHealthOrg",
         "date_created": "2023-10-13T10:00:00",
-        "instruct_human": "Consider the patient's mental health history and current state to choose the best treatment option.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Provide a treatment recommendation based on the patient's mental health assessment."
     },
     {
@@ -156,7 +156,7 @@
         "canonical_identifier": "psychiatry-002",
         "publisher": "MentalHealthOrg",
         "date_created": "2023-10-13T11:00:00",
-        "instruct_human": "Assess the patient's risk factors and decide on the appropriate level of care.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Based on the patient's mental health data, suggest the best care approach."
     },
     {
@@ -176,7 +176,7 @@
         "canonical_identifier": "rare-001",
         "publisher": "RareDiseaseResearch",
         "date_created": "2023-10-14T09:00:00",
-        "instruct_human": "Evaluate the risks and benefits of each trial to make an informed decision.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Based on the trial details, recommend the most beneficial option for the patient. Please an answer from the choices and reply in JSON format as \"{\"answer\": \"<your-answer-choice>\""
     },
     {
@@ -251,7 +251,7 @@
         "canonical_identifier": "diagnosis-003",
         "publisher": "HealthOrg",
         "date_created": "2023-10-15T10:00:00",
-        "instruct_human": "Review each decision point carefully and select the most appropriate clinical action.",
+        "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
         "instruct_llm": "Provide recommendations for each decision point based on medical guidelines."
     }
 ]
