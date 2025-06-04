@@ -7,7 +7,6 @@ class SubjectType(Enum):
     POLICYMAKER = "policymaker"
     PUBLIC = "public"
 
-
 class GeoContext(Enum):
     RURAL = "rural"
     URBAN = "urban"
@@ -27,8 +26,4 @@ class ParticipantStatus(Enum):
     WITHDRAWN = "withdrawn"
     EXCLUDED = "excluded"
 
-class ResponseQuality(Enum):
-    VALID = "valid"
-    SUSPECT = "suspect"
-    INVALID = "invalid"
-    INCOMPLETE = "incomplete"
+

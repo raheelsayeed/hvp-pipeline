@@ -23,7 +23,13 @@ class Participant(BaseModel):
     profession: Optional[str] = None 
     instruction: Optional[str] = None
     geo_context: Optional[GeoContext] = None
-    healthcare_system: Optional[HealthcareSystem] = None 
+    healthcare_system: Optional[HealthcareSystem] = None
+    lat: Optional[int] = None 
+    long: Optional[int] = None 
+    country: Optional[str] = None 
+    city: Optional[str] = None 
+
+
     status: ParticipantStatus = ParticipantStatus.ACTIVE
 
     @property 

@@ -5,13 +5,11 @@ from .primitive import IdentifiableUUID
 from .survey import Survey
 from .question import Question
 
-class QuestionResponse(IdentifiableUUID):
+class QuestionResponse(BaseModel):
     question_identifier: str
     answer_set_identifier: str
-    prompt: str
+    prompt: Optional[str] = None 
     response: dict | None = Field(title="No Response")
-
-
 
 
 class SurveyResponse(IdentifiableUUID): 
@@ -29,6 +27,39 @@ class SurveyResponse(IdentifiableUUID):
                 return self.survey.participant.format_response(response=response.response)
 
         return "No response available"
+    
+    def to_markdown2(self) -> str:
+        # Convert survey_response to Markdown for rendering in template
+        md = f"##### Survey: {self.survey.identifier}\n\n"
+
+        # Map questions by identifier for quick lookup
+        question_map = {q.identifier: q for q in self.survey.questions}
+
+        for r in self.responses:
+            question = question_map.get(r.question_identifier)
+            if not question:
+                continue  # skip if question not found in survey
+
+            # Find the corresponding answer set in the question
+            answer_set = next(
+                (a for a in question.answers if a.identifier == r.answer_set_identifier),
+                None
+            )
+
+            md += f"## Question: {question.identifier}\n\n"
+            md += f"**Instruction:** {question.instruct_human}\n\n"
+            md += f"**Prompt:**\n\n{question.text}\n\n"
+
+            if answer_set:
+                md += f"**Answer Set ({answer_set.identifier}) Options:**\n"
+                for opt in answer_set.options:
+                    md += f"- {opt['text']} (`{opt['value']}`)\n"
+            else:
+                md += "*Answer set not found.*\n"
+
+            md += f"\n**Response:** `{r.response}`\n\n---\n\n"
+
+        return md
     
 
     def to_markdown(self, file_path: Optional[str] = None) -> str:
