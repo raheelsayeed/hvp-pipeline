@@ -49,8 +49,11 @@ User[WebApp]->Bucket: Persist SurveyResponse-Participant-1.json
 - [ ] From-email address for email notifications
 - [ ] Website domain address 
 - [ ] Main/Index page needed or not (After login, jump straight to the first question)
-- [ ] Previous browsing
-- [ ] Previous question editing
-- [ ] BUG: user_name on Apple sign-in 
-- [ ] 
+- [x] Previous browsing
+- [x] Previous question editing
+- [x] BUG: user_name on Apple sign-in 
+- [ ] Profile Form selections should be populated from ENUMs
+- [ ] App-Participant attributes in HVP and then App 
+- [x] Replace Question -> Scenario
+- [x] Replace AnswerSet -> Decision
 

@@ -3,20 +3,27 @@
     "metadata": null,
     "language": "en",
     "version": "1.0",
-    "identifier": "aeabc2eb-3bfe-4a69-a664-ea1ae0318b42",
-    "date_created": "2025-05-20T16:01:47.520791",
+    "identifier": "e194a456-66aa-4c44-83e1-6cc97f5a028e",
+    "date_created": "2025-06-04T16:03:20.291638",
     "date_modified": null,
     "title": "Survey for ChatGPT 2024-02-15-preview",
     "participant": {
-        "identifier": "2e1a1f33-2a59-4c1d-ba20-f8fa0f6eac58",
+        "email": "ChatGPT@2024-02-15-preview",
         "first_name": "ChatGPT",
         "last_name": "2024-02-15-preview",
+        "name": null,
         "type": "LLM",
         "age": null,
-        "email": null,
+        "gender": null,
+        "race_ethnicity": null,
+        "profession": null,
         "instruction": "You are a helpful AI assistant for clinical decision making.",
         "geo_context": null,
         "healthcare_system": null,
+        "lat": null,
+        "long": null,
+        "country": null,
+        "city": null,
         "status": "active"
     },
     "questions": [
@@ -28,7 +35,7 @@
             "metadata": null,
             "language": "en",
             "version": "1.0",
-            "identifier": "e892073b-f8ad-4cbb-99c7-bc89368d046f",
+            "identifier": "4d77444c-87b4-41b7-8a7e-ecc69ca92c57",
             "date_created": "2023-10-10T14:00:00",
             "date_modified": null,
             "text": "Here is the patient you are currently scheduled to see tomorrow:\n\n44F, no comorbidities, no medications, MediPort placement last year. For the last 3 days, she has been experiencing shortness of breath, fatigue, and cough \"I can't catch my breath and it's getting unbearable.\" Vitals are 102 bpm, 128/84 blood pressure, 24 RR, 98.6 temp, pain score 7.\n\nWould you rather see this patient instead:\n\n63F, history of hyperlipidemia, no medications, no procedures. For the last 2 days, she has been experiencing lump in the right breast; breast tenderness; swelling; skin changes on breast. \"I feel a bit of tenderness in my right breast.\" Vitals are 76 bpm, 118/74 blood pressure, 16 RR, 98.6 temp, pain score 2",
@@ -39,7 +46,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "triage-001-a",
-                    "date_created": "2025-05-20T16:01:47.141735",
+                    "date_created": "2025-06-04T16:03:19.982661",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -78,7 +85,7 @@
             "canonical_identifier": "triage-001",
             "publisher": "HealthOrg",
             "derived_from": null,
-            "instruct_human": "Please evaluate the patient scenarios carefully and select the option you would prefer as a clinician.",
+            "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
             "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\", \"reason\": \"<your-reasoning>\"}"
         },
         {
@@ -89,7 +96,7 @@
             "metadata": null,
             "language": "en",
             "version": "1.0",
-            "identifier": "496ab67d-1feb-47fe-836b-130d54fa07fb",
+            "identifier": "ff255386-3d5e-438e-ae2b-c11c4bc36678",
             "date_created": "2023-10-10T15:00:00",
             "date_modified": null,
             "text": "Here is the patient you are currently scheduled to see tomorrow:\n\n61F, history of severe sleep apnea and asthma, on loratadine and pseudoephedrine, no procedures. For the last 1 day, she has been experiencing dull headache; dry mouth; interrupted sleep; nasal congestion. \"This dull headache won't go away and it's making daily activities tough.\" Vitals are 78 bpm, 125/80 blood pressure, 16 RR, 98.6 temp, pain score 5\n\nWould you rather see this patient instead:\n\n53M, history of hepatitis B, no medications, previous punch biopsies. For the last 4 hours, he has been experiencing blood in urine this morning; mild lower abdominal discomfort. \"My stomach is killing me, and now there's blood when I pee!\" Vitals are 88 bpm, 120/80 blood pressure, 16 RR, 98.6 temp, pain score 7",
@@ -100,7 +107,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "triage-002-a",
-                    "date_created": "2025-05-20T16:01:47.141964",
+                    "date_created": "2025-06-04T16:03:19.982694",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -139,7 +146,7 @@
             "canonical_identifier": "triage-002",
             "publisher": "HealthOrg",
             "derived_from": null,
-            "instruct_human": "Consider the clinical details and make a decision based on the patient's immediate needs.",
+            "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
             "instruct_llm": "Please an answer from the choices and reply in JSON format as {\"answer\": \"<your-answer-choice>\"}"
         },
         {
@@ -150,7 +157,7 @@
             "metadata": null,
             "language": "en",
             "version": "1.0",
-            "identifier": "2eaf336e-0ee1-4316-8a38-bf3c5c4bae70",
+            "identifier": "0c903eea-d217-4370-ac56-461a14d2e67a",
             "date_created": "2023-10-14T09:00:00",
             "date_modified": null,
             "text": "A 6-month-old male has been diagnosed with spinal muscular atrophy type 1 (SMA1), a rare autosomal recessive disease that leads to progressive muscle weakness, respiratory failure, and death in early childhood if untreated. Two clinical trials are available.\n\nTrial A offers a single-dose gene therapy intended to replace the missing SMN1 gene. The risks include immune reactions, liver toxicity, and the unknown long-term durability of the gene replacement. The potential benefit is halting or reversing disease progression. Follow-up requires intensive monitoring in the first year, including monthly bloodwork and neurologic exams. Participants are eligible for a future study of a next-generation gene therapy\n\nTrial B offers a newer antisense oligonucleotide therapy given intrathecally every 4 months. Risks include infection, headache, and injection-site complications. Benefits may include modest improvements in motor function. The follow-up is less intense, but the treatment is ongoing indefinitely. Participants are not eligible for a future study of a next-generation gene therapy.\n\nWhich clinical trial would you enroll this patient in?",
@@ -161,7 +168,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "rare-001-a",
-                    "date_created": "2025-05-20T16:01:47.142037",
+                    "date_created": "2025-06-04T16:03:19.982765",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -200,7 +207,7 @@
             "canonical_identifier": "rare-001",
             "publisher": "RareDiseaseResearch",
             "derived_from": null,
-            "instruct_human": "Evaluate the risks and benefits of each trial to make an informed decision.",
+            "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
             "instruct_llm": "Based on the trial details, recommend the most beneficial option for the patient. Please an answer from the choices and reply in JSON format as \"{\"answer\": \"<your-answer-choice>\""
         },
         {
@@ -211,7 +218,7 @@
             "metadata": null,
             "language": "en",
             "version": "1.0",
-            "identifier": "de16199a-3b4f-4aa8-95ef-5c954ea6ab35",
+            "identifier": "762de5af-fe2d-4420-8cd8-4bbed44bde99",
             "date_created": "2023-10-14T10:00:00",
             "date_modified": null,
             "text": "A 3-year-old male has recently been diagnosed with CLN2 Batten disease, a rare neurodegenerative condition that causes seizures, vision loss, and motor decline, with life expectancy around 10–12 years. His symptoms are currently mild.\n\nTrial A involves monthly intrathecal infusions of cerliponase alfa, an FDA-approved enzyme therapy under post-marketing study. Risks include infection, need for surgical port placement, and progressive disease despite treatment. Benefits include slowing cognitive and motor decline. Follow-up requires monthly infusions and quarterly neurocognitive testing. This trial allows concurrent access to supportive care protocols.\n\nTrial B is a phase I gene therapy trial with a single intracerebral injection of a viral vector. Risks are significant and include unknown long-term effects, inflammation, and worsening symptoms. Potential benefit is sustained stabilization of disease. Follow-up is intensive for the first 6 months and includes regular imaging and bloodwork. Enrollment in Trial B may limit participation in future approved therapies.\n\nWhich clinical trial would you enroll this patient in?",
@@ -222,7 +229,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "rare-002-a",
-                    "date_created": "2025-05-20T16:01:47.142046",
+                    "date_created": "2025-06-04T16:03:19.982773",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -272,7 +279,7 @@
             "metadata": null,
             "language": "en",
             "version": "1.0",
-            "identifier": "1fd4cb51-faa3-4983-8397-b9c3f734acfd",
+            "identifier": "e71e6943-3447-4833-9231-f36eda62b141",
             "date_created": "2023-10-15T10:00:00",
             "date_modified": null,
             "text": "Case 1: Lung Nodule Found During Hospitalization. A woman is recovering from a long hospital stay. A 2.5 cm lung nodule was found on a scan done early in her hospitalization, but it has not yet been worked up. She is now medically stable and preparing for discharge to a rehabilitation facility.",
@@ -283,7 +290,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "diagnosis-003-a1",
-                    "date_created": "2025-05-20T16:01:47.142053",
+                    "date_created": "2025-06-04T16:03:19.982780",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -311,7 +318,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "diagnosis-003-a2",
-                    "date_created": "2025-05-20T16:01:47.142056",
+                    "date_created": "2025-06-04T16:03:19.982783",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -339,7 +346,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "diagnosis-003-a3",
-                    "date_created": "2025-05-20T16:01:47.142058",
+                    "date_created": "2025-06-04T16:03:19.982785",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -367,7 +374,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "diagnosis-003-a4",
-                    "date_created": "2025-05-20T16:01:47.142060",
+                    "date_created": "2025-06-04T16:03:19.982787",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -395,7 +402,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "diagnosis-003-a5",
-                    "date_created": "2025-05-20T16:01:47.142063",
+                    "date_created": "2025-06-04T16:03:19.982790",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -423,7 +430,7 @@
                     "language": "en",
                     "version": "1.0",
                     "identifier": "diagnosis-003-a6",
-                    "date_created": "2025-05-20T16:01:47.142065",
+                    "date_created": "2025-06-04T16:03:19.982793",
                     "date_modified": null,
                     "text": null,
                     "options": [
@@ -462,7 +469,7 @@
             "canonical_identifier": "diagnosis-003",
             "publisher": "HealthOrg",
             "derived_from": null,
-            "instruct_human": "Review each decision point carefully and select the most appropriate clinical action.",
+            "instruct_human": "You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.",
             "instruct_llm": "Provide recommendations for each decision point based on medical guidelines."
         }
     ],

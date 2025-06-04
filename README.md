@@ -1,6 +1,8 @@
 HumanValuesProject
 ===================
 
+Please note: Need AWS-Bedrock for Claude model run 
+
 ## secrets 
 
 ```

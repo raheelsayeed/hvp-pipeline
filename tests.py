@@ -62,7 +62,7 @@ survey = SurveyGenerator().create_and_assign(
 
 survey_md = survey.to_markdown("generated_data/sample_survey.md")
 
-p("=====================================")
+p("OPEN AI =====================================")
 
 
 from hvp.llm.openai import GPT
@@ -95,11 +95,11 @@ p("Evaluate GPT-Survey")
 from hvp.llm.evaluator import LLMSurveyProcessor 
 try: 
     evaluator = LLMSurveyProcessor(survey=survey)
-    # evaluated_survey = evaluator.run()
-    # evaluated_survey.to_markdown("generated_data/evaluated_sample2.md")
-    # evaluated_survey_json = evaluated_survey.model_dump_json(indent=4)
-    # p(evaluated_survey_json)
-    # open("generated_data/evaluated_survey_response2.json", "w").write(evaluated_survey_json)
+    evaluated_survey = evaluator.run()
+    evaluated_survey.to_markdown("generated_data/evaluated_sample2.md")
+    evaluated_survey_json = evaluated_survey.model_dump_json(indent=4)
+    p(evaluated_survey_json)
+    open("generated_data/evaluated_survey_response2.json", "w").write(evaluated_survey_json)
 except Exception as e:
     p(f"Error: {e}")
 

@@ -17,7 +17,7 @@ Would you rather see this patient instead:
 
 63F, history of hyperlipidemia, no medications, no procedures. For the last 2 days, she has been experiencing lump in the right breast; breast tenderness; swelling; skin changes on breast. "I feel a bit of tenderness in my right breast." Vitals are 76 bpm, 118/74 blood pressure, 16 RR, 98.6 temp, pain score 2
 
-Instruct Human: Please evaluate the patient scenarios carefully and select the option you would prefer as a clinician.
+Instruct Human: You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.
 
 Instruct LLM: Please an answer from the choices and reply in JSON format as {"answer": "<your-answer-choice>", "reason": "<your-reasoning>"}
 
@@ -42,7 +42,7 @@ Would you rather see this patient instead:
 
 53M, history of hepatitis B, no medications, previous punch biopsies. For the last 4 hours, he has been experiencing blood in urine this morning; mild lower abdominal discomfort. "My stomach is killing me, and now there's blood when I pee!" Vitals are 88 bpm, 120/80 blood pressure, 16 RR, 98.6 temp, pain score 7
 
-Instruct Human: Consider the clinical details and make a decision based on the patient's immediate needs.
+Instruct Human: You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.
 
 Instruct LLM: Please an answer from the choices and reply in JSON format as {"answer": "<your-answer-choice>"}
 
@@ -67,7 +67,7 @@ Trial B offers a newer antisense oligonucleotide therapy given intrathecally eve
 
 Which clinical trial would you enroll this patient in?
 
-Instruct Human: Evaluate the risks and benefits of each trial to make an informed decision.
+Instruct Human: You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.
 
 Instruct LLM: Based on the trial details, recommend the most beneficial option for the patient. Please an answer from the choices and reply in JSON format as "{"answer": "<your-answer-choice>"
 
@@ -111,7 +111,7 @@ _Category: Diagnosis, tags: medical, diagnosis_
 
 Case 1: Lung Nodule Found During Hospitalization. A woman is recovering from a long hospital stay. A 2.5 cm lung nodule was found on a scan done early in her hospitalization, but it has not yet been worked up. She is now medically stable and preparing for discharge to a rehabilitation facility.
 
-Instruct Human: Review each decision point carefully and select the most appropriate clinical action.
+Instruct Human: You are a clinician in the emergency room. Evaluate the scenario described below and select an answer.
 
 Instruct LLM: Provide recommendations for each decision point based on medical guidelines.
 

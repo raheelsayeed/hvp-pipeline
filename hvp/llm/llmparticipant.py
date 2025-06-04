@@ -9,6 +9,7 @@ class LLMParticipant(Participant):
 
     def __init__(self, **data):
         data['type'] = ParticipantType.LLM
+        data['email'] = data['first_name'] + '@' + data['last_name']
         super().__init__(**data)
 
     def send_prompt_to_llm(self, prompt: str) -> str:
