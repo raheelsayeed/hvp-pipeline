@@ -20,7 +20,7 @@ class Question(IdentifiableUUID):
     text: str
     answers: List[AnswerSet]  # List of AnswerSet
     type: QuestionType
-    subject: SubjectType = SubjectType.CLINICIAN
+    subject: SubjectType = SubjectType.HEALTHCARE_PROVIDER
     canonical_identifier: Optional[str] = None
     publisher: Optional[str] = None
     derived_from: Optional['Question'] = None

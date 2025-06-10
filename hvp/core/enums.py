@@ -1,29 +1,48 @@
 from enum import Enum, auto
 
-class SubjectType(Enum):
+
+class SubjectType(str, Enum):
     PATIENT = "patient"
-    CLINICIAN = "clinician"
+    HEALTHCARE_PROVIDER = "healthcare provider"
     ETHICIST = "ethicist"
     POLICYMAKER = "policymaker"
     PUBLIC = "public"
 
-class GeoContext(Enum):
+class CountryEnum(str, Enum):
+    India = "India"
+    Israel = "Israel"
+    UnitedStates = "United States"
+    Other = "Other"
+
+class GeoContext(str, Enum):
     RURAL = "rural"
     URBAN = "urban"
     SUBURBAN = "suburban"
-    REMOTE = "remote"
+    REMOTE = "remote (online)"
 
-class HealthcareSystem(Enum):
+class ProviderTypeEnum(str, Enum):
+    PHSICIAN = "Doctor"
+    NURSE_PRACTITIONER = "Nurse Practitioner"
+    PHYSICIAN_ASSISTANT = "Physician Assistant"
+    Other = "Other"
+
+
+class HealthcareSystem(str, Enum):
     PRIMARY = "primary"
     SECONDARY = "secondary"
     TERTIARY = "tertiary"
     QUATERNARY = "quaternary"
 
-class ParticipantStatus(Enum):
+
+class ParticipantStatus(str, Enum):
     ENROLLED = "enrolled"
     ACTIVE = "active"
     COMPLETED = "completed"
     WITHDRAWN = "withdrawn"
     EXCLUDED = "excluded"
 
-
+class CountryEnum(str, Enum):
+    India = "India"
+    Israel = "Israel"
+    UnitedStates = "United States"
+    Other = "Other"
