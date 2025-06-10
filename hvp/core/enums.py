@@ -2,8 +2,8 @@ from enum import Enum, auto
 
 
 class SubjectType(str, Enum):
-    PATIENT = "patient"
     HEALTHCARE_PROVIDER = "healthcare provider"
+    PATIENT = "patient"
     ETHICIST = "ethicist"
     POLICYMAKER = "policymaker"
     PUBLIC = "public"
