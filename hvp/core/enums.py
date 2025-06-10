@@ -14,6 +14,19 @@ class CountryEnum(str, Enum):
     UnitedStates = "United States"
     Other = "Other"
 
+class ClinicalField(str, Enum):
+    PRIMARY_CARE = "Primary Care"
+    EMERGENCY_MEDICINE = "Emergency Medicine"
+    INTERNAL_MEDICINE = "Internal Medicine"
+    CARDIOLOGY = "Cardiology"
+    ONCOLOGY = "Oncology"
+    NEUROLOGY = "Neurology"
+    PEDIATRICS = "Pediatrics"
+    GERIATRICS = "Geriatrics"
+    PSYCHIATRY = "Psychiatry"
+    OBSTETRICS_GYNECOLOGY = "Obstetrics/Gynecology"
+
+
 class GeoContext(str, Enum):
     RURAL = "rural"
     URBAN = "urban"
