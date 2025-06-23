@@ -20,11 +20,12 @@ print(boolean_type.identifier)
 
 p("=====================================")
 
-question_data = load_question_from_file('input_data/questions.json')
+question_data = load_question_from_file('input_data/questions2.json')
 questions = [Question.from_json(q) for q in question_data]
 p(f'Number of questions loaded: {len(questions)}')
 p(f'{questions[0].display_item()}')
 
+exit()
 
 p("=====================================")
 QSet = QuestionSet(
@@ -136,3 +137,5 @@ try:
     open("generated_data/claud_evaluated_survey_response.json", "w").write(evaluated_survey_json)
 except Exception as e:
     p(f"Error: {e}")
+
+

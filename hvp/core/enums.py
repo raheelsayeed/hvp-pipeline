@@ -25,16 +25,19 @@ class ClinicalField(str, Enum):
     GERIATRICS = "Geriatrics"
     PSYCHIATRY = "Psychiatry"
     OBSTETRICS_GYNECOLOGY = "Obstetrics/Gynecology"
+    TRANSPLANT = "Transplant" 
+    RARE_DISEASES = "Rare diseases"
+    ENDOCRINOLOGY = "Endocrinology"
 
 
 class GeoContext(str, Enum):
     RURAL = "rural"
     URBAN = "urban"
-    SUBURBAN = "suburban"
-    REMOTE = "remote (online)"
+    SUBURBAN = "suburban"   
+    TELEMEDICINE = "telemedicine"
 
 class ProviderTypeEnum(str, Enum):
-    PHSICIAN = "Doctor"
+    PHYSICIAN = "Doctor"
     NURSE_PRACTITIONER = "Nurse Practitioner"
     PHYSICIAN_ASSISTANT = "Physician Assistant"
     Other = "Other"

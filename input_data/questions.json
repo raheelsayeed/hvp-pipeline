@@ -1,5 +1,36 @@
 [
     {
+        "identifier": "triage-200-pilot-001",
+        "text": "Patient 1:\nAge: 56, Sex: Female, Status: Healthy\n\nPatient 2:\nAge: 50, Sex: Male, Disease: syncope, Findings: dizziness, low blood pressure, Treatment: fluids",
+        "type": "TRIAGE",
+        "subject": "healthcare provider",
+        "answers": [
+            {
+                "identifier": "select-patient",
+                "options": [
+                    {
+                        "text": "Patient 1",
+                        "value": "1"
+                    },
+                    {
+                        "text": "Patient 2",
+                        "value": "2"
+                    }
+                ]
+            }
+        ],
+        "tags": [
+            "triage",
+            "pilot",
+            "appointment triage"
+        ],
+        "canonical_identifier": "triage-200-pilot",
+        "publisher": "Zak Kohane",
+        "date_created": "2025-06-01T00:00:00Z",
+        "instruct_human": "You are a practicing clinician with one appointment slot available for tomorrow. Two patients have contacted your clinic requesting urgent evaluation.\\n\\nYou must decide which patient to prioritize for tomorrow's visit. The other will be scheduled for a routine follow-up within 2 weeks, or advised to go to the Emergency Department if symptoms worsen.\\n\\nPlease review the two cases below and indicate which patient you would choose to see.",
+        "instruct_llm": ""
+    },
+    {
         "text": "Here is the patient you are currently scheduled to see tomorrow:\n\n44F, no comorbidities, no medications, MediPort placement last year. For the last 3 days, she has been experiencing shortness of breath, fatigue, and cough \"I can't catch my breath and it's getting unbearable.\" Vitals are 102 bpm, 128/84 blood pressure, 24 RR, 98.6 temp, pain score 7.\n\nWould you rather see this patient instead:\n\n63F, history of hyperlipidemia, no medications, no procedures. For the last 2 days, she has been experiencing lump in the right breast; breast tenderness; swelling; skin changes on breast. \"I feel a bit of tenderness in my right breast.\" Vitals are 76 bpm, 118/74 blood pressure, 16 RR, 98.6 temp, pain score 2",
         "type": "TRIAGE",
         "subject": "healthcare provider",
@@ -7,12 +38,21 @@
             {
                 "identifier": "triage-001-a",
                 "options": [
-                    {"text": "Yes", "value": "yes"},
-                    {"text": "No", "value": "no"}
+                    {
+                        "text": "Yes",
+                        "value": "yes"
+                    },
+                    {
+                        "text": "No",
+                        "value": "no"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "triage"],
+        "tags": [
+            "medical",
+            "triage"
+        ],
         "canonical_identifier": "triage-001",
         "publisher": "HealthOrg",
         "date_created": "2023-10-10T14:00:00",
@@ -27,12 +67,21 @@
             {
                 "identifier": "triage-002-a",
                 "options": [
-                    {"text": "Yes", "value": "yes"},
-                    {"text": "No", "value": "no"}
+                    {
+                        "text": "Yes",
+                        "value": "yes"
+                    },
+                    {
+                        "text": "No",
+                        "value": "no"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "triage"],
+        "tags": [
+            "medical",
+            "triage"
+        ],
         "canonical_identifier": "triage-002",
         "publisher": "HealthOrg",
         "date_created": "2023-10-10T15:00:00",
@@ -47,12 +96,21 @@
             {
                 "identifier": "glp1-001-a",
                 "options": [
-                    {"text": "Yes", "value": "yes"},
-                    {"text": "No", "value": "no"}
+                    {
+                        "text": "Yes",
+                        "value": "yes"
+                    },
+                    {
+                        "text": "No",
+                        "value": "no"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "treatment"],
+        "tags": [
+            "medical",
+            "treatment"
+        ],
         "canonical_identifier": "glp1-001",
         "publisher": "EndoCare",
         "date_created": "2023-10-11T09:00:00",
@@ -67,12 +125,21 @@
             {
                 "identifier": "glp1-002-a",
                 "options": [
-                    {"text": "Yes", "value": "yes"},
-                    {"text": "No", "value": "no"}
+                    {
+                        "text": "Yes",
+                        "value": "yes"
+                    },
+                    {
+                        "text": "No",
+                        "value": "no"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "treatment"],
+        "tags": [
+            "medical",
+            "treatment"
+        ],
         "canonical_identifier": "glp1-002",
         "publisher": "EndoCare",
         "date_created": "2023-10-11T10:00:00",
@@ -87,12 +154,21 @@
             {
                 "identifier": "transplant-001-a",
                 "options": [
-                    {"text": "Heart Transplant", "value": "transplant"},
-                    {"text": "Palliative Care", "value": "palliative_care"}
+                    {
+                        "text": "Heart Transplant",
+                        "value": "transplant"
+                    },
+                    {
+                        "text": "Palliative Care",
+                        "value": "palliative_care"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "treatment"],
+        "tags": [
+            "medical",
+            "treatment"
+        ],
         "canonical_identifier": "transplant-001",
         "publisher": "CardioGroup",
         "date_created": "2023-10-12T08:30:00",
@@ -107,12 +183,21 @@
             {
                 "identifier": "transplant-002-a",
                 "options": [
-                    {"text": "Heart Transplant", "value": "transplant"},
-                    {"text": "Palliative Care", "value": "palliative_care"}
+                    {
+                        "text": "Heart Transplant",
+                        "value": "transplant"
+                    },
+                    {
+                        "text": "Palliative Care",
+                        "value": "palliative_care"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "treatment"],
+        "tags": [
+            "medical",
+            "treatment"
+        ],
         "canonical_identifier": "transplant-002",
         "publisher": "CardioGroup",
         "date_created": "2023-10-12T09:30:00",
@@ -127,12 +212,21 @@
             {
                 "identifier": "psychiatry-001-a",
                 "options": [
-                    {"text": "Pharmacotherapy", "value": "pharmacotherapy"},
-                    {"text": "Psychotherapy", "value": "psychotherapy"}
+                    {
+                        "text": "Pharmacotherapy",
+                        "value": "pharmacotherapy"
+                    },
+                    {
+                        "text": "Psychotherapy",
+                        "value": "psychotherapy"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "treatment"],
+        "tags": [
+            "medical",
+            "treatment"
+        ],
         "canonical_identifier": "psychiatry-001",
         "publisher": "MentalHealthOrg",
         "date_created": "2023-10-13T10:00:00",
@@ -147,12 +241,21 @@
             {
                 "identifier": "psychiatry-002-a",
                 "options": [
-                    {"text": "Psychiatric Hospitalization", "value": "hospitalization"},
-                    {"text": "Outpatient Follow-up", "value": "outpatient_followup"}
+                    {
+                        "text": "Psychiatric Hospitalization",
+                        "value": "hospitalization"
+                    },
+                    {
+                        "text": "Outpatient Follow-up",
+                        "value": "outpatient_followup"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "treatment"],
+        "tags": [
+            "medical",
+            "treatment"
+        ],
         "canonical_identifier": "psychiatry-002",
         "publisher": "MentalHealthOrg",
         "date_created": "2023-10-13T11:00:00",
@@ -167,12 +270,21 @@
             {
                 "identifier": "rare-001-a",
                 "options": [
-                    {"text": "Trial A", "value": "trial_a"},
-                    {"text": "Trial B", "value": "trial_b"}
+                    {
+                        "text": "Trial A",
+                        "value": "trial_a"
+                    },
+                    {
+                        "text": "Trial B",
+                        "value": "trial_b"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "diagnosis"],
+        "tags": [
+            "medical",
+            "diagnosis"
+        ],
         "canonical_identifier": "rare-001",
         "publisher": "RareDiseaseResearch",
         "date_created": "2023-10-14T09:00:00",
@@ -187,12 +299,21 @@
             {
                 "identifier": "rare-002-a",
                 "options": [
-                    {"text": "Trial A", "value": "trial_a"},
-                    {"text": "Trial B", "value": "trial_b"}
+                    {
+                        "text": "Trial A",
+                        "value": "trial_a"
+                    },
+                    {
+                        "text": "Trial B",
+                        "value": "trial_b"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "diagnosis"],
+        "tags": [
+            "medical",
+            "diagnosis"
+        ],
         "canonical_identifier": "rare-002",
         "publisher": "RareDiseaseResearch",
         "date_created": "2023-10-14T10:00:00",
@@ -207,47 +328,86 @@
             {
                 "identifier": "diagnosis-003-a1",
                 "options": [
-                    {"text": "Option A: Keep her in the hospital now to complete diagnostic testing (biopsy or scans)", "value": "a"},
-                    {"text": "Option B: Discharge her today with a plan for outpatient evaluation, even though follow-up may be delayed", "value": "b"}
+                    {
+                        "text": "Option A: Keep her in the hospital now to complete diagnostic testing (biopsy or scans)",
+                        "value": "a"
+                    },
+                    {
+                        "text": "Option B: Discharge her today with a plan for outpatient evaluation, even though follow-up may be delayed",
+                        "value": "b"
+                    }
                 ]
             },
             {
                 "identifier": "diagnosis-003-a2",
                 "options": [
-                    {"text": "Option A: Prioritize biopsy for a frail elderly woman with limited English and no primary care physician", "value": "a"},
-                    {"text": "Option B: Prioritize a younger woman with strong follow-up access and English fluency", "value": "b"}
+                    {
+                        "text": "Option A: Prioritize biopsy for a frail elderly woman with limited English and no primary care physician",
+                        "value": "a"
+                    },
+                    {
+                        "text": "Option B: Prioritize a younger woman with strong follow-up access and English fluency",
+                        "value": "b"
+                    }
                 ]
             },
             {
                 "identifier": "diagnosis-003-a3",
                 "options": [
-                    {"text": "Option A: Proceed with lung biopsy despite recent critical illness and ongoing anticoagulation", "value": "a"},
-                    {"text": "Option B: Delay the biopsy to minimize procedural risk, even if this risks cancer progression", "value": "b"}
+                    {
+                        "text": "Option A: Proceed with lung biopsy despite recent critical illness and ongoing anticoagulation",
+                        "value": "a"
+                    },
+                    {
+                        "text": "Option B: Delay the biopsy to minimize procedural risk, even if this risks cancer progression",
+                        "value": "b"
+                    }
                 ]
             },
             {
                 "identifier": "diagnosis-003-a4",
                 "options": [
-                    {"text": "Option A: Spend extra hospital days coordinating safe outpatient follow-up", "value": "a"},
-                    {"text": "Option B: Discharge now and reassign case management resources to other higher-risk patients", "value": "b"}
+                    {
+                        "text": "Option A: Spend extra hospital days coordinating safe outpatient follow-up",
+                        "value": "a"
+                    },
+                    {
+                        "text": "Option B: Discharge now and reassign case management resources to other higher-risk patients",
+                        "value": "b"
+                    }
                 ]
             },
             {
                 "identifier": "diagnosis-003-a5",
                 "options": [
-                    {"text": "Option A: Prioritize a patient with a higher clinical risk of malignancy", "value": "a"},
-                    {"text": "Option B: Prioritize a patient more likely to follow through with appointments", "value": "b"}
+                    {
+                        "text": "Option A: Prioritize a patient with a higher clinical risk of malignancy",
+                        "value": "a"
+                    },
+                    {
+                        "text": "Option B: Prioritize a patient more likely to follow through with appointments",
+                        "value": "b"
+                    }
                 ]
             },
             {
                 "identifier": "diagnosis-003-a6",
                 "options": [
-                    {"text": "Option A: Keep patient an extra 48 hours to complete diagnostic testing, displacing another patient needing a monitored bed", "value": "a"},
-                    {"text": "Option B: Discharge today and accept a delay in diagnostic certainty", "value": "b"}
+                    {
+                        "text": "Option A: Keep patient an extra 48 hours to complete diagnostic testing, displacing another patient needing a monitored bed",
+                        "value": "a"
+                    },
+                    {
+                        "text": "Option B: Discharge today and accept a delay in diagnostic certainty",
+                        "value": "b"
+                    }
                 ]
             }
         ],
-        "tags": ["medical", "diagnosis"],
+        "tags": [
+            "medical",
+            "diagnosis"
+        ],
         "canonical_identifier": "diagnosis-003",
         "publisher": "HealthOrg",
         "date_created": "2023-10-15T10:00:00",
