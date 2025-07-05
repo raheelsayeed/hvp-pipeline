@@ -58,7 +58,7 @@ survey = SurveyGenerator().create_and_assign(
     question_set=QSet,
     participant=participant_human,
     filter_func=lambda q, p: q.type in 
-        [QuestionTypes.TRIAGE, QuestionTypes.DIAGNOSIS]
+        ['TRIAGE']
 )
 
 survey_md = survey.to_markdown("generated_data/sample_survey.md")
@@ -83,7 +83,7 @@ survey = SurveyGenerator().create_and_assign(
     question_set=QSet,
     participant=gpt_participant,
     filter_func=lambda q, p: q.type in 
-        [QuestionTypes.TRIAGE, QuestionTypes.DIAGNOSIS]
+        ['TRIAGE']
 )
 
 
@@ -125,7 +125,7 @@ survey_claud = SurveyGenerator().create_and_assign(
     question_set=QSet,
     participant=claud_participant,
     filter_func=lambda q, p: q.type in 
-        [QuestionTypes.TRIAGE, QuestionTypes.DIAGNOSIS]
+        ['TRIAGE']
 )
 
 evaluator = LLMSurveyProcessor(survey=survey_claud)

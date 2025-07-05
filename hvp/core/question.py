@@ -8,18 +8,14 @@ from .answeroption import AnswerOption, AnswerSet
 from .primitive import *
 from .enums import SubjectType
 
-class QuestionType(PrimitiveType):
-    name: str
 
-@add_from_json_method(QuestionType, 'categories.json')
-class QuestionTypes(Enum):
-    pass
+
 
 
 class Question(IdentifiableUUID):
     text: str
     answers: List[AnswerSet]  # List of AnswerSet
-    type: QuestionType
+    type: str
     subject: SubjectType = SubjectType.HEALTHCARE_PROVIDER
     canonical_identifier: Optional[str] = None
     publisher: Optional[str] = None
@@ -45,7 +41,7 @@ class Question(IdentifiableUUID):
         return cls(
             text=data["text"],
             answers=[AnswerSet(**opts) for opts in data["answers"]],
-            type=getattr(QuestionTypes, data['type'], None),
+            type=data['type'],
             tags=data.get('tags', None),
             subject=SubjectType(data['subject']),
             canonical_identifier=data.get("canonical_identifier"),
@@ -63,7 +59,7 @@ class Question(IdentifiableUUID):
         
         question_item = ""
         if not omit_metadata:
-            question_item += f"\n_Category: {self.type.name}, tags: {', '.join(self.tags)}_\n\n"
+            question_item += f"\n_Category: {self.type}, tags: {', '.join(self.tags)}_\n\n"
         
         question_item += f"{self.text}\n\n"
 
@@ -109,7 +105,7 @@ class Question(IdentifiableUUID):
     def to_json(self) -> dict:
         return {
             "text": self.text,
-            "type": self.type.value,
+            "type": self.type,
             "subject": self.subject.value,
             "canonical_identifier": self.canonical_identifier,
             "publisher": self.publisher,
