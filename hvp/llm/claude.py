@@ -8,9 +8,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class Claude(LLM):
-
-
-
     # max tokens = 200k
     @staticmethod
     def v37():

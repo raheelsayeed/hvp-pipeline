@@ -49,6 +49,7 @@ class GPT(LLM):
              user_prompt: str,
              temperature: Optional[float] = 0.7,
              max_tokens: Optional[int] = None) -> Any:
+        
         """Synchronously get a chat response from OpenAI."""
         messages = [
             {"role": "system", "content": system_prompt},
@@ -57,6 +58,8 @@ class GPT(LLM):
         
         for attempt in range(self.retry_count):
             try:
+                print(attempt)
+
                 response = self.client.chat.completions.create(
                     model=self.model_name,
                     messages=messages,
@@ -65,10 +68,9 @@ class GPT(LLM):
                     timeout=self.timeout
                 )
 
-                return response
-                
+                print(response)
 
+                return response
             except Exception as e:
                 raise e
-                logger.warning(f"Attempt {attempt+1} failed: {str(e)}")
 

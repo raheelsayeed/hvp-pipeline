@@ -3,7 +3,7 @@ from typing import Any, List, Dict, Optional
 from pydantic import BaseModel, Field
 import logging
 
-from hvp.core.response import QuestionResponse
+from hvp.core.response import ResponseRecord
 
 
 logger = logging.getLogger(__name__)
@@ -32,11 +32,15 @@ class LLM(BaseModel, ABC):
     def format_response(self, response) -> str:
         """Format the response from the LLM."""
         pass
+
+    @abstractmethod
+    def construct_prompt(self) -> str: 
+        pass
     
     def chat(self, 
              system_prompt: str, 
              user_prompt: str, 
-             max_tokens: Optional[int] = None) -> QuestionResponse:
+             max_tokens: Optional[int] = None) -> ResponseRecord:
         """Synchronously get a chat response from the LLM."""
         pass
 

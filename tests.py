@@ -1,93 +1,47 @@
 #!/usr/bin/env python
-
-from rich.console import Console 
-
-p = Console().print
+from rich.console import Console
+from hvp.core import question, response
+import json
+from rich import print
 
 # Load question data from a JSON file outside the package
 def load_question_from_file(file_path):
     with open(file_path, 'r') as file:
         return json.load(file)
 
-from hvp.core.participant import ParticipantType
-from hvp.core.question import *
+triage_questions = '/Users/raheel/dbmi/humanValuesProject/hvp-app/static/demo/triage_pilot_v2_ids.json'  
+question_data = load_question_from_file(triage_questions)
+triage_questions_v2 = [question.Question(**q) for q in question_data]
+print(f'Number of questions loaded: {len(triage_questions_v2)}')
+
+# response_files_path = 'human_responses/TRIAGE/'
+# response_records = response.ResponseRecord.load_all_responses(response_files_path)
+# p(f'Number of Responses: {len(response_records)}')
+# p(response_records[0])
+
+print('==== OpenAI-ChatGPT ====')
+
+from hvp.llm.openai import GPT
+
+gpt = GPT.v4o()
+print(type(gpt))
+print(gpt_participant)
+
+from hvp.llm.evaluator import LLMEval 
+
+gpt_triage = LLMEval(
+    questions=triage_questions_v2,
+    llm=gpt_participant
+)
 
 
 
-from hvp.core.answeroption import AnswerTypes 
-boolean_type = AnswerTypes.BOOLEAN
-print(boolean_type.identifier)
+responses, errors = gpt_triage.run() 
 
-p("=====================================")
-
-question_data = load_question_from_file('input_data/questions2.json')
-questions = [Question.from_json(q) for q in question_data]
-p(f'Number of questions loaded: {len(questions)}')
-p(f'{questions[0].display_item()}')
+p(responses, errors)
 
 exit()
 
-p("=====================================")
-QSet = QuestionSet(
-    title="Triage and Diagnositic Questions",
-    questions=questions,
-    version="2.1"
-)
-p(QSet.model_dump())
-p("=====================================")
-
-from hvp.core.participant import Participant 
-participant_human = Participant(
-    first_name="John",
-    last_name="Doe",
-    type=ParticipantType.HUMAN,
-    age=30,
-    email="john.doe@example.com"
-)
-p(participant_human)    
-custom_filter = lambda q, p: "important" in q.tags and p.first_name.startswith("J")
-
-p("=====================================")
-
-from hvp.core.survey import * 
-from hvp.generator.generator import SurveyGenerator
-
-# Generate a survey with specific criteria
-survey = SurveyGenerator().create_and_assign(
-    num_questions=5,
-    question_set=QSet,
-    participant=participant_human,
-    filter_func=lambda q, p: q.type in 
-        ['TRIAGE']
-)
-
-survey_md = survey.to_markdown("generated_data/sample_survey.md")
-
-p("OPEN AI =====================================")
-
-
-from hvp.llm.openai import GPT
-from hvp.llm.llmparticipant import LLMParticipant
-
-gpt = GPT.v4o()
-p(type(gpt))
-gpt_participant = LLMParticipant(
-    first_name="ChatGPT",
-    last_name=gpt.model_version,
-    instruction="You are a helpful AI assistant for clinical decision making.",
-    model=gpt
-)
-p(gpt_participant)
-survey = SurveyGenerator().create_and_assign(
-    num_questions=5,
-    question_set=QSet,
-    participant=gpt_participant,
-    filter_func=lambda q, p: q.type in 
-        ['TRIAGE']
-)
-
-
-open("generated_data/survey_participant_gpt.json", "w").write(survey.model_dump_json(indent=4))
 
 
 p("Create LLMSurveyProcessor")

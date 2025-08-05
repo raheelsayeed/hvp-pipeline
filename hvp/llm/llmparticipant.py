@@ -1,5 +1,5 @@
 
-from hvp.core.response import QuestionResponse
+from hvp.core.response import ResponseRecord
 from ..core.participant import Participant, ParticipantType
 from .base import LLM
 
