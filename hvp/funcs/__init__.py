@@ -1,6 +1,6 @@
-from .concordance import ConcordanceResult, compute_concordance_rate
+from .concordance import ConcordanceResult, concordance_rate
 
 __all__ = [
     "ConcordanceResult",
-    "compute_concordance_rate",
+    "concordance_rate",
 ]
